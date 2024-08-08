@@ -1,0 +1,39 @@
+[tool.poetry]
+# This section defines the Poetry configuration block.
+name = "app"
+version = "0.1.0"
+description = "Login page with react and fastapi to create a connection"
+authors = ["CDAC"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+# This section declares the project's dependencies.
+python = "^3.9"
+uvicorn = "^0.18.3"
+fastapi = "^0.85.0"
+SQLAlchemy = "^1.4.41"
+# Object-relational mapper (ORM) for interacting with databases.
+sqlmodel = "^0.0.8"
+# Lightweight ORM built on top of SQLAlchemy.
+asyncpg = "^0.26.0"
+# Asynchronous PostgreSQL driver for Python.
+psycopg2 = "^2.9.4"
+# Synchronous PostgreSQL driver for Python
+pydantic = "^1.10.2"
+# Data validation library used for defining data models.
+alembic = "^1.8.1"
+# Database migration tool for managing schema changes.
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+
+[build-system]
+# This section defines the build system configuration.
+requires = ["poetry-core"]
+# This specifies that the project requires the "poetry-core" package for managing dependencies.
+build-backend = "poetry.core.masonry.api"
+# This defines the backend engine used for building the project
+
+
+[tool.poetry.scripts]
+start= "app.main:start"
